@@ -7,8 +7,9 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/ptypes/timestamp"
-	"github.com/kaepa3/gRPCTest/ch1/api/gen/api"
-	"google.golang.org/protobuf/types/known/timestamp"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+	"pancake.baker/gen/api"
 )
 
 func init() {

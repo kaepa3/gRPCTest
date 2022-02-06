@@ -10,8 +10,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/kaepa3/gRPCTest/ch1/api/gen/api"
-	"github.com/kaepa3/gRPCTest/ch1/api/handler"
+	"pancake.baker/gen/api"
+	"pancake.baker/handler"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	}
 
 	server := grpc.NewServer()
-	api.RegisterPancakeBakerServiceSever(
+	api.RegisterPancakeBakerServiceServer(
 		server,
 		handler.NewBakerHandler(),
 	)
@@ -34,7 +34,7 @@ func main() {
 	}()
 
 	quit := make(chan os.Signal)
-	signal.Nortify(quit, os.Interrupt)
+	signal.Notify(quit, os.Interrupt)
 	<-quit
 	log.Println("stopping gRPC server...")
 	server.GracefulStop()
