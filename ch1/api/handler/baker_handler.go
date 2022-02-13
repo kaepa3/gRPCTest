@@ -2,6 +2,7 @@ package handler
 
 import (
 	"context"
+	"fmt"
 	"math/rand"
 	"sync"
 	"time"
@@ -33,7 +34,7 @@ func NewBakerHandler() *BakerHandler {
 	}
 }
 
-func (h *BakerHandler) Bake(ctx context.Context, req *api.BakeRequest) (*api.BakeResponce, error) {
+func (h *BakerHandler) Bake(ctx context.Context, req *api.BakeRequest) (*api.BakeResponse, error) {
 	if req.Menu == api.Pancake_UNKNOWN || req.Menu > api.Pancake_SPICY_CURRY {
 		return nil, status.Errorf(codes.InvalidArgument, "パンケーキを選んでください！")
 	}
@@ -41,8 +42,9 @@ func (h *BakerHandler) Bake(ctx context.Context, req *api.BakeRequest) (*api.Bak
 	h.report.Lock()
 	h.report.data[req.Menu] = h.report.data[req.Menu] + 1
 	h.report.Unlock()
+	fmt.Printf("Baked a pancake for %v !\n", ctx.Value("UserName"))
 
-	return &api.BakeResponce{
+	return &api.BakeResponse{
 		Pancake: &api.Pancake{
 			Menu:           req.Menu,
 			ChefName:       "gami",
@@ -54,7 +56,7 @@ func (h *BakerHandler) Bake(ctx context.Context, req *api.BakeRequest) (*api.Bak
 		},
 	}, nil
 }
-func (h *BakerHandler) Report(ctx context.Context, req *api.ReportRequest) (*api.ReportResponce, error) {
+func (h *BakerHandler) Report(ctx context.Context, req *api.ReportRequest) (*api.ReportResponse, error) {
 	counts := make([]*api.Report_BakeCount, 0)
 	h.report.Lock()
 	for k, v := range h.report.data {
@@ -64,7 +66,7 @@ func (h *BakerHandler) Report(ctx context.Context, req *api.ReportRequest) (*api
 		})
 	}
 	h.report.Unlock()
-	return &api.ReportResponce{
+	return &api.ReportResponse{
 		Report: &api.Report{
 			BakeCounts: counts,
 		},

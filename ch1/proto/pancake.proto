@@ -7,8 +7,8 @@ option go_package = "gen/api";
 import "google/protobuf/timestamp.proto";
 
 service PancakeBakerService{
-    rpc Bake(BakeRequest) returns (BakeResponce){}
-    rpc Report(ReportRequest) returns (ReportResponce){}
+    rpc Bake(BakeRequest) returns (BakeResponse){}
+    rpc Report(ReportRequest) returns (ReportResponse){}
 }
 
 message Pancake{
@@ -40,13 +40,13 @@ message BakeRequest{
     Pancake.Menu menu = 1;
     }
 
-message BakeResponce {
+message BakeResponse {
     Pancake pancake = 1;
 }
 
 message ReportRequest{}
 
-message ReportResponce {
+message ReportResponse {
     Report report = 1;
 }
 

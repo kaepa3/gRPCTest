@@ -251,7 +251,7 @@ func (x *BakeRequest) GetMenu() Pancake_Menu {
 	return Pancake_UNKNOWN
 }
 
-type BakeResponce struct {
+type BakeResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -259,8 +259,8 @@ type BakeResponce struct {
 	Pancake *Pancake `protobuf:"bytes,1,opt,name=pancake,proto3" json:"pancake,omitempty"`
 }
 
-func (x *BakeResponce) Reset() {
-	*x = BakeResponce{}
+func (x *BakeResponse) Reset() {
+	*x = BakeResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pancake_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -268,13 +268,13 @@ func (x *BakeResponce) Reset() {
 	}
 }
 
-func (x *BakeResponce) String() string {
+func (x *BakeResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*BakeResponce) ProtoMessage() {}
+func (*BakeResponse) ProtoMessage() {}
 
-func (x *BakeResponce) ProtoReflect() protoreflect.Message {
+func (x *BakeResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_pancake_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -286,12 +286,12 @@ func (x *BakeResponce) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use BakeResponce.ProtoReflect.Descriptor instead.
-func (*BakeResponce) Descriptor() ([]byte, []int) {
+// Deprecated: Use BakeResponse.ProtoReflect.Descriptor instead.
+func (*BakeResponse) Descriptor() ([]byte, []int) {
 	return file_pancake_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *BakeResponce) GetPancake() *Pancake {
+func (x *BakeResponse) GetPancake() *Pancake {
 	if x != nil {
 		return x.Pancake
 	}
@@ -336,7 +336,7 @@ func (*ReportRequest) Descriptor() ([]byte, []int) {
 	return file_pancake_proto_rawDescGZIP(), []int{4}
 }
 
-type ReportResponce struct {
+type ReportResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -344,8 +344,8 @@ type ReportResponce struct {
 	Report *Report `protobuf:"bytes,1,opt,name=report,proto3" json:"report,omitempty"`
 }
 
-func (x *ReportResponce) Reset() {
-	*x = ReportResponce{}
+func (x *ReportResponse) Reset() {
+	*x = ReportResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pancake_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -353,13 +353,13 @@ func (x *ReportResponce) Reset() {
 	}
 }
 
-func (x *ReportResponce) String() string {
+func (x *ReportResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ReportResponce) ProtoMessage() {}
+func (*ReportResponse) ProtoMessage() {}
 
-func (x *ReportResponce) ProtoReflect() protoreflect.Message {
+func (x *ReportResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_pancake_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -371,12 +371,12 @@ func (x *ReportResponce) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ReportResponce.ProtoReflect.Descriptor instead.
-func (*ReportResponce) Descriptor() ([]byte, []int) {
+// Deprecated: Use ReportResponse.ProtoReflect.Descriptor instead.
+func (*ReportResponse) Descriptor() ([]byte, []int) {
 	return file_pancake_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *ReportResponce) GetReport() *Report {
+func (x *ReportResponse) GetReport() *Report {
 	if x != nil {
 		return x.Report
 	}
@@ -480,12 +480,12 @@ var file_pancake_proto_rawDesc = []byte{
 	0x28, 0x0e, 0x32, 0x1b, 0x2e, 0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x2e, 0x62, 0x61, 0x6b,
 	0x65, 0x72, 0x2e, 0x50, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x2e, 0x4d, 0x65, 0x6e, 0x75, 0x52,
 	0x04, 0x6d, 0x65, 0x6e, 0x75, 0x22, 0x40, 0x0a, 0x0c, 0x42, 0x61, 0x6b, 0x65, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x63, 0x65, 0x12, 0x30, 0x0a, 0x07, 0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x30, 0x0a, 0x07, 0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65,
 	0x2e, 0x62, 0x61, 0x6b, 0x65, 0x72, 0x2e, 0x50, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x52, 0x07,
 	0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x22, 0x0f, 0x0a, 0x0d, 0x52, 0x65, 0x70, 0x6f, 0x72,
 	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x3f, 0x0a, 0x0e, 0x52, 0x65, 0x70, 0x6f,
-	0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x63, 0x65, 0x12, 0x2d, 0x0a, 0x06, 0x72, 0x65,
+	0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2d, 0x0a, 0x06, 0x72, 0x65,
 	0x70, 0x6f, 0x72, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x70, 0x61, 0x6e,
 	0x63, 0x61, 0x6b, 0x65, 0x2e, 0x62, 0x61, 0x6b, 0x65, 0x72, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72,
 	0x74, 0x52, 0x06, 0x72, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x32, 0xa1, 0x01, 0x0a, 0x13, 0x50, 0x61,
@@ -494,11 +494,11 @@ var file_pancake_proto_rawDesc = []byte{
 	0x61, 0x6b, 0x65, 0x2e, 0x62, 0x61, 0x6b, 0x65, 0x72, 0x2e, 0x42, 0x61, 0x6b, 0x65, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x2e,
 	0x62, 0x61, 0x6b, 0x65, 0x72, 0x2e, 0x42, 0x61, 0x6b, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x63, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x06, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x12, 0x1c,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x47, 0x0a, 0x06, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x12, 0x1c,
 	0x2e, 0x70, 0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x2e, 0x62, 0x61, 0x6b, 0x65, 0x72, 0x2e, 0x52,
 	0x65, 0x70, 0x6f, 0x72, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1d, 0x2e, 0x70,
 	0x61, 0x6e, 0x63, 0x61, 0x6b, 0x65, 0x2e, 0x62, 0x61, 0x6b, 0x65, 0x72, 0x2e, 0x52, 0x65, 0x70,
-	0x6f, 0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x63, 0x65, 0x22, 0x00, 0x42, 0x09, 0x5a,
+	0x6f, 0x72, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x09, 0x5a,
 	0x07, 0x67, 0x65, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
@@ -521,9 +521,9 @@ var file_pancake_proto_goTypes = []interface{}{
 	(*Pancake)(nil),               // 1: pancake.baker.Pancake
 	(*Report)(nil),                // 2: pancake.baker.Report
 	(*BakeRequest)(nil),           // 3: pancake.baker.BakeRequest
-	(*BakeResponce)(nil),          // 4: pancake.baker.BakeResponce
+	(*BakeResponse)(nil),          // 4: pancake.baker.BakeResponse
 	(*ReportRequest)(nil),         // 5: pancake.baker.ReportRequest
-	(*ReportResponce)(nil),        // 6: pancake.baker.ReportResponce
+	(*ReportResponse)(nil),        // 6: pancake.baker.ReportResponse
 	(*Report_BakeCount)(nil),      // 7: pancake.baker.Report.BakeCount
 	(*timestamppb.Timestamp)(nil), // 8: google.protobuf.Timestamp
 }
@@ -532,13 +532,13 @@ var file_pancake_proto_depIdxs = []int32{
 	8, // 1: pancake.baker.Pancake.create_time:type_name -> google.protobuf.Timestamp
 	7, // 2: pancake.baker.Report.bake_counts:type_name -> pancake.baker.Report.BakeCount
 	0, // 3: pancake.baker.BakeRequest.menu:type_name -> pancake.baker.Pancake.Menu
-	1, // 4: pancake.baker.BakeResponce.pancake:type_name -> pancake.baker.Pancake
-	2, // 5: pancake.baker.ReportResponce.report:type_name -> pancake.baker.Report
+	1, // 4: pancake.baker.BakeResponse.pancake:type_name -> pancake.baker.Pancake
+	2, // 5: pancake.baker.ReportResponse.report:type_name -> pancake.baker.Report
 	0, // 6: pancake.baker.Report.BakeCount.menu:type_name -> pancake.baker.Pancake.Menu
 	3, // 7: pancake.baker.PancakeBakerService.Bake:input_type -> pancake.baker.BakeRequest
 	5, // 8: pancake.baker.PancakeBakerService.Report:input_type -> pancake.baker.ReportRequest
-	4, // 9: pancake.baker.PancakeBakerService.Bake:output_type -> pancake.baker.BakeResponce
-	6, // 10: pancake.baker.PancakeBakerService.Report:output_type -> pancake.baker.ReportResponce
+	4, // 9: pancake.baker.PancakeBakerService.Bake:output_type -> pancake.baker.BakeResponse
+	6, // 10: pancake.baker.PancakeBakerService.Report:output_type -> pancake.baker.ReportResponse
 	9, // [9:11] is the sub-list for method output_type
 	7, // [7:9] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name
@@ -589,7 +589,7 @@ func file_pancake_proto_init() {
 			}
 		}
 		file_pancake_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BakeResponce); i {
+			switch v := v.(*BakeResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -613,7 +613,7 @@ func file_pancake_proto_init() {
 			}
 		}
 		file_pancake_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportResponce); i {
+			switch v := v.(*ReportResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -670,8 +670,8 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type PancakeBakerServiceClient interface {
-	Bake(ctx context.Context, in *BakeRequest, opts ...grpc.CallOption) (*BakeResponce, error)
-	Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*ReportResponce, error)
+	Bake(ctx context.Context, in *BakeRequest, opts ...grpc.CallOption) (*BakeResponse, error)
+	Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*ReportResponse, error)
 }
 
 type pancakeBakerServiceClient struct {
@@ -682,8 +682,8 @@ func NewPancakeBakerServiceClient(cc grpc.ClientConnInterface) PancakeBakerServi
 	return &pancakeBakerServiceClient{cc}
 }
 
-func (c *pancakeBakerServiceClient) Bake(ctx context.Context, in *BakeRequest, opts ...grpc.CallOption) (*BakeResponce, error) {
-	out := new(BakeResponce)
+func (c *pancakeBakerServiceClient) Bake(ctx context.Context, in *BakeRequest, opts ...grpc.CallOption) (*BakeResponse, error) {
+	out := new(BakeResponse)
 	err := c.cc.Invoke(ctx, "/pancake.baker.PancakeBakerService/Bake", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -691,8 +691,8 @@ func (c *pancakeBakerServiceClient) Bake(ctx context.Context, in *BakeRequest, o
 	return out, nil
 }
 
-func (c *pancakeBakerServiceClient) Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*ReportResponce, error) {
-	out := new(ReportResponce)
+func (c *pancakeBakerServiceClient) Report(ctx context.Context, in *ReportRequest, opts ...grpc.CallOption) (*ReportResponse, error) {
+	out := new(ReportResponse)
 	err := c.cc.Invoke(ctx, "/pancake.baker.PancakeBakerService/Report", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -702,18 +702,18 @@ func (c *pancakeBakerServiceClient) Report(ctx context.Context, in *ReportReques
 
 // PancakeBakerServiceServer is the server API for PancakeBakerService service.
 type PancakeBakerServiceServer interface {
-	Bake(context.Context, *BakeRequest) (*BakeResponce, error)
-	Report(context.Context, *ReportRequest) (*ReportResponce, error)
+	Bake(context.Context, *BakeRequest) (*BakeResponse, error)
+	Report(context.Context, *ReportRequest) (*ReportResponse, error)
 }
 
 // UnimplementedPancakeBakerServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedPancakeBakerServiceServer struct {
 }
 
-func (*UnimplementedPancakeBakerServiceServer) Bake(context.Context, *BakeRequest) (*BakeResponce, error) {
+func (*UnimplementedPancakeBakerServiceServer) Bake(context.Context, *BakeRequest) (*BakeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Bake not implemented")
 }
-func (*UnimplementedPancakeBakerServiceServer) Report(context.Context, *ReportRequest) (*ReportResponce, error) {
+func (*UnimplementedPancakeBakerServiceServer) Report(context.Context, *ReportRequest) (*ReportResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Report not implemented")
 }
 

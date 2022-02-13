@@ -9,7 +9,9 @@ Bundler.require(*Rails.groups)
 module Client
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 5.2
+
+    config.paths.add Rails.root.join('app', 'gen', 'api', 'pancake', 'baker').to_s, eager_load: true
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -18,14 +20,5 @@ module Client
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.paths.add Rails.root.join(
-      'app',
-      'gen',
-      'api',
-      'pancake',
-      'maker'
-    ).to_s, eager_load: true
-
-    config.load_defaults 5.2
   end
 end
