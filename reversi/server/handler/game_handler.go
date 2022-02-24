@@ -88,7 +88,7 @@ func (h *GameHandler) start(stream pb.GameService_PlayServer, roomID int32, me *
 func (h *GameHandler) move(roomID int32, x int32, y int32, p *game.Player) error {
 	h.Lock()
 	defer h.Unlock()
-	g := games[roomID]
+	g := h.games[roomID]
 	finished, err := g.Move(x, y, p.Color)
 	if err != nil {
 		return err

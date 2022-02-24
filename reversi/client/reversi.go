@@ -75,7 +75,7 @@ func (r *Reversi) matching(ctx context.Context, cli pb.MatchintServiceClient) er
 		if resp.GetStatus() == pb.JoinRoomResponse_MATCHED {
 			r.room = build.Room(resp.GetRoom())
 			r.me = build.Player(resp.GetMe())
-			fmt.Printf("Matched room_id=%f\n", resp.GetRoom().GetId())
+			fmt.Printf("Matched room_id=%d\n", resp.GetRoom().GetId())
 			return nil
 		} else if resp.GetStatus() == pb.JoinRoomResponse_WAITNG {
 			fmt.Println("Waiting matching...")
@@ -139,7 +139,7 @@ func (r *Reversi) send(ctx context.Context, stream pb.GameService_PlayClient) er
 				time.Sleep(1 * time.Second)
 			}
 		} else {
-			r.Unlock()
+			r.RUnlock()
 			fmt.Print("Input Your Move(ex. A-1):")
 			stdin := bufio.NewScanner(os.Stdin)
 			stdin.Scan()

@@ -25,7 +25,7 @@ func (g *Game) Move(x int32, y int32, c Color) (bool, error) {
 		return false, err
 	}
 	g.Display(g.me)
-	if g.IsGameOVer() {
+	if g.IsGameOver() {
 		fmt.Println("finished")
 		g.finished = true
 		return true, nil
@@ -56,7 +56,7 @@ func (g *Game) Winner() Color {
 func (g *Game) Display(me Color) {
 	fmt.Println("")
 	if me != None {
-		fmt.Println("You: %v\n", ColorToStr(me))
+		fmt.Printf("You: %v\n", ColorToStr(me))
 	}
 	fmt.Print(" | ")
 	rs := []rune("ABCDEFGH")
@@ -79,6 +79,6 @@ func (g *Game) Display(me Color) {
 	}
 	fmt.Println("---------------------")
 
-	fmt.Printf("Score: BLACK=%d, WHITE=%d REST=%f\n", g.Board.Score(Black), g.Board.Score(White), g.Board.Rest())
+	fmt.Printf("Score: BLACK=%d, WHITE=%d REST=%d\n", g.Board.Score(Black), g.Board.Score(White), g.Board.Rest())
 	fmt.Print("\n")
 }

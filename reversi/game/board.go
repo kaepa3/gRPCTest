@@ -31,7 +31,7 @@ func NewBoard() *Board {
 
 func (b *Board) PutStone(x int32, y int32, c Color) error {
 	if !b.CanPutStone(x, y, c) {
-		return fmt.Errorf("Can not put stone x=%v, y=%v color=%c", x, y, ColortToStr(c))
+		return fmt.Errorf("Can not put stone x=%v, y=%v color=%s", x, y, ColorToStr(c))
 	}
 
 	b.Cells[x][y] = c
@@ -66,7 +66,7 @@ func (b *Board) CanPutStone(x int32, y int32, c Color) bool {
 	return false
 }
 
-func (b *Board) CountTurnabeStonesByDirection(x int32, y int32, c Color, dx int32, dy int32) int {
+func (b *Board) CountTurnableStonesByDirection(x int32, y int32, c Color, dx int32, dy int32) int {
 	cnt := 0
 	nx := x + dx
 	ny := y + dy
@@ -87,7 +87,7 @@ func (b *Board) CountTurnabeStonesByDirection(x int32, y int32, c Color, dx int3
 	return 0
 }
 
-func (b *Board) TurnStonesByDirection(x int32, y int32, c Color, dx int32, dy int32) int {
+func (b *Board) TurnStonesByDirection(x int32, y int32, c Color, dx int32, dy int32) {
 	nx := x + dx
 	ny := y + dy
 
@@ -100,7 +100,9 @@ func (b *Board) TurnStonesByDirection(x int32, y int32, c Color, dx int32, dy in
 		nx += dx
 		ny += dy
 	}
+
 }
+
 func (b *Board) AvailableCellCount(c Color) int {
 	cnt := 0
 	for i := 1; i < 9; i++ {
