@@ -15,7 +15,7 @@ message JoinRoomRequest{}
 message JoinRoomResponse {
     enum Status{
         UNKNOWN =0;
-        WATING=1;
+        WAITNG=1;
         MATCHED=2;
     }
 
